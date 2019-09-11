@@ -1,6 +1,8 @@
 # Zelda Shop
 This Ethereum project imagines a Zelda Shop point of sale with SKALE interchain messaging
 
+<img src="./docs/images/shop.png">
+
 Demo the project at https://djrosenbaum.github.io/zelda-shop/
 
 # Usage
