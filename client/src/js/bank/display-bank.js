@@ -40,7 +40,7 @@ function addListeners() {
 }
 
 async function deposit() {
-    const schainID = await dapp.contracts.TokenManager.contract.functions.chainID();
+    const schainID = 'drab-diphda';
     const account = await dapp.contracts.DepositBox.contract.signer.getAddress();
 
     await await dapp.contracts.DepositBox.contract.deposit(schainID, account, {value: ethers.utils.parseEther("1.0")});
