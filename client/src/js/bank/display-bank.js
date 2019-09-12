@@ -10,9 +10,9 @@ async function getMarkup() {
 
     return `<div class="bank">
         <div class="space"><h1>BANK</h1></div>
-        <div class="account">Wallet: ${account}</div>
-        <div class="balance">Available for Deposit: ${balance} ETH</div>
-        <div class="available">Available for Withdraw: ${available} ETH</div>
+        <div class="account">Wallet: <span>${account}</span></div>
+        <div class="balance">Available for Deposit: <span>${balance} ETH</soan></div>
+        <div class="available">Available for Withdraw: <span>${available} ETH</span></div>
         <div><button id="deposit">Deposit 0.1 ETH</button></div>
         <div><button id="withdraw">Withdraw Available Funds</button></div>
     </div>`;
