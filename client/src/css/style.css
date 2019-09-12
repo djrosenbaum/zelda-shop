@@ -145,6 +145,10 @@ textarea {
   padding-bottom: 20px;
 }
 
+.bank span {
+  font-weight: 400;
+}
+
 .shop>div {
   padding-bottom: 20px;
 }
@@ -155,4 +159,8 @@ textarea {
   background-image: url(./images/shop.png);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.shop span {
+  font-weight: 400;
 }
