@@ -19,7 +19,7 @@ async function displayMarkup() {
     // show the bank
     await displayBank();
   } else if (name === 'homestead' && ensAddress === '0x314159265dd8dbb310642f98f50c066173c1259b') {
-    document.getElementById('network_status').innerHTML = name;
+    document.getElementById('network_status').innerHTML = 'SKALE';
     // show the shop
     await displayShop();
   } else {

@@ -9,14 +9,14 @@ async function getMarkup() {
     const account = await getAccount();
     const balanceSKALE = await getBalanceSKALE();
     const balanceERC20 = await getBalanceERC20(account);
-    // const available = await getAvailable(account);
+    const defaultCostAndItems = await getDefaultCostsAndItems(account);
 
     return `<div class="shop">
         <div class="space"><h1>SHOP</h1></div>
         <div class="account">Chain Wallet: ${account}</div>
         <div class="balance">SKALE Balance: ${balanceSKALE} ETH</div>
         <div class="balance">SKALE ERC-20 Balance: ${balanceERC20} ETH</div>
-        <div>Total Arrows: 0</div>
+        <div>Total Arrows: ${defaultCostAndItems[4]}</div>
         <div><button id="approveArrows">Approve Arrows</button></div>
         <div><button id="buyArrows">Buy Arrows 0.001 ETH</button></div>
         <div><button id="exit">Exit to Mainnet</button></div>
@@ -44,6 +44,10 @@ async function approveArrows() {
 
 async function buyArrows() {
     await dapp.contracts.Shop.contract.functions.buyItem(1);
+}
+
+async function getDefaultCostsAndItems(account) {
+    return await dapp.contracts.Shop.contract.functions.getDefaultCostsAndItems(account);
 }
 
 async function exit() {
