@@ -43,7 +43,14 @@ async function approveArrows() {
 }
 
 async function buyArrows() {
-    await dapp.contracts.Shop.contract.functions.buyItem(1);
+    const account = await getAccount();
+    const allowable = await dapp.contracts.ETH_ERC20.contract.functions.allowance(account, dapp.contracts.Shop.address);
+
+    if (allowable > 0) {
+        await dapp.contracts.Shop.contract.functions.buyItem(1);
+    } else {
+        alert('approve before buying');
+    }
 }
 
 async function getDefaultCostsAndItems(account) {
