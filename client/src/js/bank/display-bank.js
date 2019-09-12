@@ -1,5 +1,4 @@
 export default async function displayBank() {
-    console.log('display bank');
     await dapp.provider.listAccounts();
     document.getElementById('space').innerHTML = await getMarkup();
     addListeners();

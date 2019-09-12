@@ -1,5 +1,4 @@
 export default async function displayShop() {
-    console.log('display shop');
     await dapp.provider.listAccounts();
     document.getElementById('space').innerHTML = await getMarkup();
     addListeners();
@@ -61,9 +60,6 @@ async function exit() {
     const account = await getAccount();
     const amount = await dapp.contracts.ETH_ERC20.contract.functions.balanceOf(account);
     const message = ethers.utils.toUtf8Bytes('Come visit again soon');
-
-    console.log('account:', account);
-    console.log('amount:', amount);
 
     await dapp.contracts.TokenManager.contract.functions.exitToMain(account, amount);
 }
