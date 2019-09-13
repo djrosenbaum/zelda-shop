@@ -41,7 +41,7 @@ async function deposit() {
     const schainID = 'drab-diphda';
     const account = await dapp.contracts.DepositBox.contract.signer.getAddress();
 
-    await await dapp.contracts.DepositBox.contract.deposit(schainID, account, {value: ethers.utils.parseEther('0.1')});
+    await dapp.contracts.DepositBox.contract.deposit(schainID, account, {value: ethers.utils.parseEther('0.1')});
 }
 
 async function withdraw() {
